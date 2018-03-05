@@ -26,7 +26,7 @@ mixin template Events(T, string[] evs) {
   }
   public bool on(string ev, void delegate(T) handler)() if(evs.canFind(ev)) {
     //writeln("Calling full template");
-    handler[ev] = handler;
+    handlers[ev] = handler;
     return true;
   }
   private bool emit(string ev, T data) {
