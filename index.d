@@ -2,8 +2,9 @@ import std.stdio;
 
 void main() {
   auto et = new Eventable;
-  et.on!"hello"((e) => writeln(e));
+  //et.on!"hello"((e) => writeln(e));
   //et.on("hello", (e) => writeln(e));
+  et.on!("hello", (string e) => e.writeln);
   et.callSomeEvents;
 }
 
